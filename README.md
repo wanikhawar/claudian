@@ -46,13 +46,11 @@ Open Claudian interface from the ribbon icon or command palette. Everything work
   - [Codex](https://github.com/openai/codex)
   - [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
   - [Grok Build](https://github.com/xai-org/grok-build)
-  - [OpenCode](https://github.com/anomalyco/opencode)
+  - [OpenCode V2](https://github.com/anomalyco/opencode)
   - [Pi](https://github.com/earendil-works/pi)
 - A compatible subscription or API provider
 - Obsidian v1.13.0+
 - Desktop only (macOS, Linux, Windows)
-
-Claudian now supports OpenCode v2, OpenCode v1 support will end on October 30, 2026. See the [OpenCode v2 migration guide](https://opencode.ai/v2/docs/migrate-v1).
 
 ## Installation
 
@@ -134,7 +132,7 @@ Claudian discovers models from each configured provider rather than keeping its 
 
 If the model is still absent, the active provider runtime or account has not reported it to Claudian. Public or API availability alone does not guarantee catalog availability for every provider integration or account. Avoid editing Claudian's installed bundle to add the model manually; those changes are unsupported and will be overwritten by updates.
 
-For OpenCode, discovery failures show the request error, including a server error reference when supplied. A successful catalog with no enabled models instead shows configuration guidance. Check the vault's `.opencode/opencode.json`, compare `opencode models --standalone` from that vault using the same CLI and environment, and use `opencode debug paths` to locate OpenCode logs. With OpenCode v2, configured V1 plugins may be incompatible; an empty catalog alone does not establish a plugin failure.
+For OpenCode, discovery failures show the request error, including a server error reference when supplied. A successful catalog with no enabled models instead shows configuration guidance. Check the vault's `.opencode/opencode.json`, compare `opencode models --standalone` from that vault using the same CLI and environment, and use `opencode debug paths` to locate OpenCode logs. Configured OpenCode v1 plugins may be incompatible with v2; an empty catalog alone does not establish a plugin failure.
 
 ### Node.js not found for an npm-installed CLI
 
@@ -186,7 +184,7 @@ src/
 │   ├── codex/                   # Codex shared app-server adaptor, JSON-RPC, JSONL history
 │   ├── deepseek/                # DeepSeek Harness native Remote adaptor, presets, and history
 │   ├── grok/                    # Grok Build ACP adaptor, native history, models, and tools
-│   ├── opencode/                # OpenCode ACP and HTTP adaptors, shared server
+│   ├── opencode/                # OpenCode HTTP adaptor, shared server
 │   ├── pi/                      # Pi RPC adaptor, model discovery, JSONL history
 │   └── acp/                     # Agent Client Protocol shared mechanics
 ├── features/

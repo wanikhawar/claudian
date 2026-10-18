@@ -22,7 +22,6 @@ import { SharedStorageService } from '../storage/SharedStorageService';
 
 export type StartupProviderCatalog = Pick<
   typeof ProviderRegistry,
-  | 'getCapabilities'
   | 'getConversationHistoryService'
   | 'getProviderDisplayName'
   | 'getRegisteredProviderIds'

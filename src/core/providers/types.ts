@@ -32,8 +32,6 @@ export interface ProviderCapabilities {
   supportsConversationBranches?: boolean;
   /** Whether forked children can be non-persistent; defaults to supportsEphemeralSessions. */
   supportsEphemeralFork?: boolean;
-  /** Omitted means checkpoint forking; full-session providers can fork only the latest reply. */
-  forkMode?: 'checkpoint' | 'full-session';
   supportsProviderCommands: boolean;
   supportsImageAttachments: boolean;
   supportsTurnSteer?: boolean;
@@ -66,7 +64,6 @@ export interface ProviderRegistration {
   isEnabled: (settings: Record<string, unknown>) => boolean;
   setEnabled?: (settings: Record<string, unknown>, enabled: boolean) => void;
   capabilities: ProviderCapabilities;
-  getConversationCapabilities?: (providerState?: Record<string, unknown>) => ProviderCapabilities;
   environmentKeyPatterns?: RegExp[];
   modelPolicy: ProviderModelPolicy;
   chatUIConfig: ProviderChatUIConfig;
